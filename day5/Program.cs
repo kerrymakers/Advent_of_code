@@ -4,22 +4,15 @@ namespace day5
     {
         static void Main(string[] args)
         {
-            //string ordersFile = "/Users/kerryfinch/Documents/Projects/Advent_of_code/day5/testOrders.txt";
-            //string updatesFile = "/Users/kerryfinch/Documents/Projects/Advent_of_code/day5/testUpdates.txt";
             string ordersFile = "/Users/kerryfinch/Documents/Projects/Advent_of_code/day5/orders.txt";
             string updatesFile = "/Users/kerryfinch/Documents/Projects/Advent_of_code/day5/updates.txt";
             string[] orders = File.ReadAllLines(ordersFile);
             string[] updates = File.ReadAllLines(updatesFile);
             string[] splitUpdate;
-            List<string> thingsWrong = new List<string>();
+            List<string> thingsWrong;
             int total = 0;
             int totalp2 = 0;
             bool needsRearranging;
-
-            //loop through updates 
-            //loop through each page of updates
-            //find in orders list
-            //check condition
 
             for (int i = 0; i < updates.Length; i++)
             {
