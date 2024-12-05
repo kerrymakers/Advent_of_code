@@ -14,7 +14,7 @@ namespace day5
             List<string> thingsWrong = new List<string>();
             int total = 0;
             int totalp2 = 0;
-            bool needsRearranging = false;
+            bool needsRearranging;
 
             //loop through updates 
             //loop through each page of updates
@@ -25,7 +25,6 @@ namespace day5
             {
                 needsRearranging = false;
                 splitUpdate = updates[i].Split(',');
-                thingsWrong.Clear();
                 thingsWrong = CheckThingsWrong(splitUpdate, orders);
                 if (thingsWrong.Count > 0)
                 {
@@ -57,8 +56,8 @@ namespace day5
                     totalp2 += mid;
                 }
             }
-            Console.WriteLine(total);
-            Console.WriteLine(totalp2);
+            Console.WriteLine("part 1: " + total);
+            Console.WriteLine("part 2: " + totalp2);
         }
         static List<string> CheckThingsWrong(string[] splitUpdate, string[] orders)
         {
