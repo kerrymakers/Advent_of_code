@@ -8,27 +8,15 @@ namespace day6_2
         static void Main(string[] args)
         {
             string inputFile = "/Users/kerryfinch/Documents/Projects/Advent_of_code/day6_2/testInput.txt";
-            // guard postion 
-            // guard direction 
-            // while guard position not a i = 0, j = 0, i = width, j = length
-            //  check next square in direction
-            //  if obstacle turn right 90 degrees
-            //  else move to next position in direction
-            //       replace previous position with X
-            //       counter++
-
-            //up, down, left, right
             string[] map = File.ReadAllLines(inputFile);
             int[] guardPosition = FindGuard(map);
             char guardDirection = map[guardPosition[0]][guardPosition[1]];
             int[] initialGuardPosition = FindGuard(map);
             bool guardCanContinue = true;
-            int xCounter = 0;
             char[] currentMapRow;
             char[] nextMapRow;
             int rowLength = map[0].Length - 1;
             int mapLength = map.Length - 1;
-            int xCounter2 = 0;
             int counter = 0;
             int mapCount = 0;
             List<string[]> alreadyVisited;
@@ -41,7 +29,6 @@ namespace day6_2
                     map = File.ReadAllLines(inputFile);
                     guardPosition = FindGuard(map);
                     guardDirection = map[guardPosition[0]][guardPosition[1]];
-                    xCounter = 0; 
                     alreadyVisited = [];
                     currentMapRow = map[a].ToCharArray();
                     guardCanContinue = true;
@@ -52,7 +39,6 @@ namespace day6_2
                         map[a] = new string(currentMapRow);
                         while (guardCanContinue)
                         {
-                            // Console.Write("Already visited: ");
                             foreach(string[] visit in alreadyVisited)
                             {
                                 if(visit[0] == guardPosition[0].ToString() && visit[1] == guardPosition[1].ToString() && visit[2] == guardDirection.ToString())
@@ -71,7 +57,6 @@ namespace day6_2
                                 else
                                 {
                                     currentMapRow[guardPosition[1]] = 'X';
-                                    xCounter++;
                                     alreadyVisited.Add([guardPosition[0].ToString(),guardPosition[1].ToString(),guardDirection.ToString()]);
                                     map[guardPosition[0]] = new string(currentMapRow);
                                     if (guardPosition[0] == 0)
@@ -96,7 +81,6 @@ namespace day6_2
                                 else
                                 {
                                     currentMapRow[guardPosition[1]] = 'X';
-                                    xCounter++;
                                     alreadyVisited.Add([guardPosition[0].ToString(),guardPosition[1].ToString(),guardDirection.ToString()]);
                                     map[guardPosition[0]] = new string(currentMapRow);
                                     if (guardPosition[0] == mapLength)
@@ -121,7 +105,6 @@ namespace day6_2
                                 else
                                 {
                                     currentMapRow[guardPosition[1]] = 'X';
-                                    xCounter++;
                                     alreadyVisited.Add([guardPosition[0].ToString(),guardPosition[1].ToString(),guardDirection.ToString()]);
                                     if (guardPosition[1] == rowLength)
                                     {
@@ -144,7 +127,6 @@ namespace day6_2
                                 else
                                 {
                                     currentMapRow[guardPosition[1]] = 'X';
-                                    xCounter++;
                                     alreadyVisited.Add([guardPosition[0].ToString(),guardPosition[1].ToString(),guardDirection.ToString()]);
                                     if (guardPosition[1] == 0)
                                     {
@@ -163,19 +145,7 @@ namespace day6_2
                     }
                 }
             }
-            
-
-            foreach(string row in map)
-            {
-                foreach(char c in row)
-                {
-                    if (c == 'X')
-                    {
-                        xCounter2++;
-                    }
-                }
-            }
-            Console.WriteLine(counter);
+            Console.WriteLine("answer: " + counter);
         }
 
         static int[] FindGuard(string[] map)
