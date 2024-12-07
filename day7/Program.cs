@@ -7,11 +7,7 @@
         string[] splitInput;
         decimal answer;
         string[] numbers;
-        //find number of gaps
-        //loop through each operation sequence 
-        //e.g. if 3 gaps - +++, ++*, +*+, *++, +**, *+*, **+, ***
         List<string> allOperations;
-        //string operations = ""; 
         decimal runningTotal = 0;
         decimal finalAnswer = 0;
 
