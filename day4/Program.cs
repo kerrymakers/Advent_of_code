@@ -1,4 +1,4 @@
-namespace day3
+namespace day4
 {
     class Program
     {
