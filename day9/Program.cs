@@ -10,19 +10,18 @@ class Program
         List<string> layout;
         List<string> p1Layout;
         List<string> p2Layout;
-        List<int[]> emptyBlocks;
         List<int[]> blocks;
         var watch = System.Diagnostics.Stopwatch.StartNew();
 
-        (layout, emptyBlocks, blocks) = MakeLayout(input);
+        (layout, blocks) = MakeLayout(input);
         p1Layout = Part1(layout);
         CalculateP1Output(p1Layout);
         watch.Stop();
         Console.WriteLine($"Execution Time for part 1: {watch.ElapsedMilliseconds} ms");
         
         watch = System.Diagnostics.Stopwatch.StartNew();
-        (layout, emptyBlocks, blocks) = MakeLayout(input);
-        p2Layout = Part2(layout, emptyBlocks, blocks, input[0]);
+        (layout, blocks) = MakeLayout(input);
+        p2Layout = Part2(layout, blocks, input[0]);
         CalculateP2Output(p2Layout);
         watch.Stop();
         Console.WriteLine($"Execution Time for part 2: {watch.ElapsedMilliseconds} ms");
@@ -57,11 +56,9 @@ class Program
         }
         return emptyBlocks;
     }
-    static (List<string>, List<int[]>, List<int[]>) MakeLayout(string[] input)
+    static (List<string>, List<int[]>) MakeLayout(string[] input)
     {
         List<string> layout = [];
-        //stating index, size 
-        List<int[]> emptyBlocks = [];
         //starting index, size, number
         List<int[]> blocks = [];
         int fileId = 0;
@@ -71,7 +68,6 @@ class Program
             {
                 if (int.Parse(input[0][i].ToString()) > 0)
                 {
-                    emptyBlocks.Add([layout.Count, int.Parse(input[0][i].ToString())]);
                     layout = AddToLayout(layout, ".", int.Parse(input[0][i].ToString()));
                 }
             }
@@ -85,7 +81,7 @@ class Program
                 }
             }
         }
-        return (layout, emptyBlocks, blocks);
+        return (layout, blocks);
     }
 
     static List<string> Part1(List<string> layout)
@@ -159,8 +155,9 @@ class Program
         Console.WriteLine("Part 2 answer: " + total);
     }
 
-    static List<string> Part2(List<string> layout, List<int[]> emptyBlocks, List<int[]> blocks, string input)
+    static List<string> Part2(List<string> layout, List<int[]> blocks, string input)
     {
+        List<int[]> emptyBlocks = [];
         //loop through non empty blocks from right to left
         //  loop through empty blocks from left to right 
         //      if empty block size > block size 
@@ -169,6 +166,7 @@ class Program
         //          empty block size -= block size
         //          empty block size start = empty block size start + block size 
         //          break
+        emptyBlocks = CalculateEmptyBlocks(layout);
         for (int i = blocks.Count - 1; i > 0; i--)
         {
             for (int j = 0; j < emptyBlocks.Count; j++)
@@ -182,7 +180,8 @@ class Program
                             layout[emptyBlocks[j][0] + k] = blocks[i][2].ToString();
                             layout[blocks[i][0] + k] = ".";
                         }
-                        emptyBlocks = CalculateEmptyBlocks(layout);
+                        emptyBlocks[j][1] -= blocks[i][1];
+                        emptyBlocks[j][0] += blocks[i][1];
                         break;
                     }
                 }
