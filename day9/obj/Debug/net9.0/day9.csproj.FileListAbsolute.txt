@@ -1,0 +1,15 @@
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/bin/Debug/net9.0/day9
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/bin/Debug/net9.0/day9.deps.json
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/bin/Debug/net9.0/day9.runtimeconfig.json
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/bin/Debug/net9.0/day9.dll
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/bin/Debug/net9.0/day9.pdb
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/day9.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/day9.AssemblyInfoInputs.cache
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/day9.AssemblyInfo.cs
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/day9.csproj.CoreCompileInputs.cache
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/day9.sourcelink.json
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/day9.dll
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/refint/day9.dll
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/day9.pdb
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/day9.genruntimeconfig.cache
+/Users/kerryfinch/Documents/Projects/Advent_of_code/day9/obj/Debug/net9.0/ref/day9.dll
