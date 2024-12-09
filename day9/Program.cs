@@ -16,7 +16,6 @@ class Program
 
         (layout, emptyBlocks, blocks) = MakeLayout(input);
         p1Layout = Part1(layout);
-        //PrintLayout(p1Layout);
         CalculateP1Output(p1Layout);
         watch.Stop();
         Console.WriteLine($"Execution Time for part 1: {watch.ElapsedMilliseconds} ms");
@@ -24,7 +23,6 @@ class Program
         watch = System.Diagnostics.Stopwatch.StartNew();
         (layout, emptyBlocks, blocks) = MakeLayout(input);
         p2Layout = Part2(layout, emptyBlocks, blocks, input[0]);
-        //PrintLayout(p2Layout);
         CalculateP2Output(p2Layout);
         watch.Stop();
         Console.WriteLine($"Execution Time for part 2: {watch.ElapsedMilliseconds} ms");
@@ -41,7 +39,6 @@ class Program
     static List<int[]> CalculateEmptyBlocks(List<string> layout)
     {
         List<int[]> emptyBlocks = [];
-        //string nextItem;
         int count = 1;
         for (int i = 0; i < layout.Count-1; i++)
         {
