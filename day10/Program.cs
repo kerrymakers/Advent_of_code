@@ -8,7 +8,7 @@
         List<int[]> trailtails = FindTrailheads(map, '9');
         int total = 0;
         int trailTotal;
-        int count;
+        int count = 0;
         for (int i = 0; i < trailheads.Count; i++)
         {
             
@@ -19,14 +19,13 @@
                 map = File.ReadAllLines(inputFile);
                 RemoveTrailheads(map, trailheads,i);
                 RemoveTrailheads(map, trailtails, j);
-                count = Exist(map,"0123456789",trailtails[j],trailheads[i]);
+                count = GetTrailCount(map,"0123456789",trailheads[i]);
                 total+=count;
                 trailTotal+=count;
                 
             }
         }
-
-        Console.WriteLine("Part 1: " + total);
+        Console.WriteLine("Part 2: " + total);
     }
     
     static void RemoveTrailheads(string[] map, List<int[]> trailheads, int index)
@@ -68,7 +67,7 @@
         return trailheads;
     }
 
-    static int Exist(string[] map, string word, int[] end, int[] start)
+    static int GetTrailCount(string[] map, string word, int[] start)
     {
         bool found;
         int count = 0;
