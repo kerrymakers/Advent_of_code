@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string inputFile = "/Users/kerryfinch/Documents/Projects/Advent_of_code/day12/input.txt";
+        string inputFile = "/Users/kerryfinch/Documents/Projects/Advent_of_code/day12/testInput3.txt";
         string[] garden = File.ReadAllLines(inputFile);
         bool found;
         char plotChar;
@@ -194,11 +194,11 @@ class Program
                     }
                     if (CheckNotInPlot(plot,i-1,j))
                     {
-                        if(CheckNotInPlot(plot,i,j-1))
+                        if(CheckNotInPlot(plot,i,j+1))
                         {
                             fences++;
                         }
-                        else if(!CheckNotInPlot(plot,i-1,j-1))
+                        else if(!CheckNotInPlot(plot,i-1,j+1))
                         {
                             fences++;
                         }
