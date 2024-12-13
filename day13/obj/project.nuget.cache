@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "i7EMTE2n0bs=",
+  "success": true,
+  "projectFilePath": "/Users/kerryfinch/Documents/Projects/Advent_of_code/day13/day13.csproj",
+  "expectedPackageFiles": [
+    "/Users/kerryfinch/.nuget/packages/mathnet.numerics/5.0.0/mathnet.numerics.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
